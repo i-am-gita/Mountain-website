@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Statistika" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bf36ca4d-1457-43d2-b808-13a6620a8444">
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="planina" class="java.lang.String"/>
+	<field name="brojRezervacija" class="java.lang.Integer"/>
+	<field name="brojNocenja" class="java.lang.Integer"/>
+	<field name="najviseRezervacija" class="java.lang.String"/>
+	<field name="odnos" class="java.lang.String"/>
+	<variable name="ukupnoRezervacija" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{brojRezervacija}]]></variableExpression>
+	</variable>
+	<variable name="ukupnoNocenja" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{brojNocenja}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="71" splitType="Stretch">
+			<staticText>
+				<reportElement x="130" y="20" width="300" height="50" uuid="b1ab8005-d448-4c67-8a13-fc29b8ad46ad">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Statistika rezervacija]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="90" height="21" uuid="7b2f21ed-6654-4a75-a9f2-9f788477d511"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Naziv planine]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="110" height="30" uuid="dbdcf079-b596-4115-bd18-389634aee448"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Broj rezervacija]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="215" y="1" width="85" height="30" uuid="9cba4c68-5979-4329-a617-e7598b6950f9"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Broj noćenja]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="307" y="1" width="100" height="30" uuid="6e1570f8-882b-4f9f-93e0-139cf77a3063"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Najposećenija]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="1" width="139" height="30" uuid="9e348faa-fd2b-4a71-9f38-3de652681f5d"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Trenutni kapacitet]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="1" width="100" height="29" uuid="723ff751-46df-4108-893d-66a08d588fad">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3c52b3de-b5be-47b5-bc5f-fc69f03bc402"/>
+				</reportElement>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{planina}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="125" y="1" width="60" height="30" uuid="761cf75b-8fd7-48f5-9a9e-71b9ff51e188">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d2d8bbde-1c90-4522-9e98-fe231d7f19b5"/>
+				</reportElement>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{brojRezervacija}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="2" width="53" height="30" uuid="113e301c-4617-41cd-bd0c-e8fe3de44d26">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="94f42e11-67bc-4575-a0d8-1be2b45fd408"/>
+				</reportElement>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{brojNocenja}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="307" y="2" width="100" height="30" uuid="9fc10feb-d833-46e5-ac9a-fe92678136f8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="281a21a1-5edb-4071-966a-538ea4917105"/>
+				</reportElement>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{najviseRezervacija}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="1" width="100" height="30" uuid="ec79684c-5573-49c7-a02a-c6e9efee1b8a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d2eb647a-92cb-4cb7-8320-c51d4783f4ef"/>
+				</reportElement>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{odnos}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="37" splitType="Stretch">
+			<textField>
+				<reportElement x="230" y="3" width="100" height="30" uuid="76438cd0-51d1-4ca9-a0bc-671b465b6b4a"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="62" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="5" width="170" height="25" uuid="ef20e34c-2e44-43f1-8ad8-e23a0bca2622"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Ukupan broj rezervacija:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="173" y="4" width="176" height="30" uuid="e14f72a7-1745-41a5-b7d1-a2dad88168c2"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{ukupnoRezervacija}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="32" width="139" height="30" uuid="26263018-1a9d-44a1-ae1c-41aad5f8cc27"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Ukupan broj noćenja:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="144" y="32" width="176" height="30" uuid="94a56bcf-14cf-48f2-995c-ae680dfdfa77"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{ukupnoNocenja}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

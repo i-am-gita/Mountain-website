@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Spisak" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="340cedff-ce1a-4927-a529-61f829448e9e">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="pocetak" class="java.lang.String"/>
+	<field name="kraj" class="java.lang.String"/>
+	<field name="tip" class="java.lang.String"/>
+	<field name="nazivStaze" class="java.lang.String"/>
+	<variable name="ukupnoTermina" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{pocetak}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="75" y="24" width="404" height="30" uuid="e0c25574-a248-4b0c-aa6b-b18e57a14b60">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Spisak rezervisanih termina]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="2" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="72" splitType="Stretch">
+			<staticText>
+				<reportElement x="7" y="27" width="68" height="30" uuid="3119070e-8146-4781-9cc4-319727af7fc3"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Pocetak]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="27" width="100" height="30" uuid="eee2972c-7394-4905-9775-869a9851cd60"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Kraj]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="27" width="135" height="30" uuid="950246c6-8b26-46ed-9cdc-2ee0e2ba7666"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Tip znamenitosti]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="27" width="192" height="30" uuid="a5c4d95f-a96e-4dce-bfee-dda11e105839"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Naziv planinarske staze]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="130" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="30" uuid="edca3f4e-e24e-43d8-bdde-98eafad79642"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pocetak}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="0" width="110" height="30" uuid="c4e92e72-2f78-4ceb-bb0a-06ece9d71dac"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kraj}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="-2" width="118" height="30" uuid="14694dbb-ef11-4695-b8d3-05a30c92164b"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tip}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="384" y="-2" width="160" height="30" uuid="59745a28-ae8c-4b68-8979-2c49955a9b20"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nazivStaze}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="37" splitType="Stretch">
+			<textField>
+				<reportElement x="227" y="3" width="100" height="30" uuid="84939a41-965d-4c27-8e64-072d651b7bf2"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="9" width="140" height="20" uuid="810bb922-e83e-47ac-a038-da748b85d2f3"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Ukupan broj termina: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="140" y="9" width="128" height="20" uuid="cb760c63-8d0e-4544-bbf8-8caa6d99656b"/>
+				<textFieldExpression><![CDATA[$V{ukupnoTermina}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
